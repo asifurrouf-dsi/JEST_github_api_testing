@@ -8,10 +8,10 @@ const github = require('../github')
 // A simple example test
 describe('#getUser() using Promises', () => {
   it('should load user data', () => {
-    return github.getUser('vnglst')
+    return github.getUser('asifurrouf-dsi')
     .then(data => {
       expect(data).toBeDefined()
-      expect(data.entity.name).toEqual('Koen van Gilst')
+      expect(data.entity.login).toEqual('asifurrouf-dsi')
     })
   })
 })
@@ -19,8 +19,8 @@ describe('#getUser() using Promises', () => {
 // The exact same test using async/await
 describe('#getUser() using async/await', () => {
   it('should load user data', async () => {
-    const data = await github.getUser('vnglst')
+    const data = await github.getUser('asifurrouf-dsi')
     expect(data).toBeDefined()
-    expect(data.entity.name).toEqual('Koen van Gilst')
+    expect(data.entity.login).toEqual('asifurrouf-dsi')
   })
 })
